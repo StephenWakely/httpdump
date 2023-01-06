@@ -81,7 +81,7 @@ async fn endpoint(
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
-    let addr = SocketAddr::from(([127, 0, 0, 1], args.port));
+    let addr = SocketAddr::from(([0, 0, 0, 0], args.port));
     let response = Arc::new(args.response.unwrap_or_else(|| "OK".to_string()));
     let status_code = StatusCode::from_u16(args.status_code).unwrap();
 
